@@ -41,7 +41,7 @@ uint hash_func(const char *key, int capacity){
     return hash % capacity;  
 }
 
-hashmap *hashmap_create(int initial_capacity, value_dup_fn dup_, value_free_fn free_){
+hashmap *hashmap_create(int initial_capacity, value_dup_hash dup_, value_free_hash free_){
     if (initial_capacity <= 0) return NULL;
     if ((dup_ == NULL) != (free_ == NULL)) return NULL;
 
